@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void helloBarnie() {
-  print("Barnie!");
+  print("Barnie!123");
 }
 
 void main() {
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Pentruca nu e bine'),
+
     );
   }
 }
