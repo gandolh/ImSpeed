@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void helloBarnie() {
-  print("Barnie!");
+  print("Barnie!123");
 }
 
 void main() {
@@ -16,11 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     helloBarnie();
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Horia nu mai bea',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: ''),
     );
   }
 }
