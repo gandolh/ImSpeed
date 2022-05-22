@@ -16,8 +16,8 @@ class _BottomNavbarState extends State<BottomNavbar> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    OurTeam(),
     Races(),
+    OurTeam(),
     Help()
   ];
 
