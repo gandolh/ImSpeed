@@ -15,13 +15,16 @@ class _OurTeamState extends State<OurTeam> {
       addAutomaticKeepAlives: false,
       children: [
         MemberCard(
-          memberData: MemberData("Gusatu Cristian", "Gandolh", ""),
+          memberData: MemberData("Gusatu Cristian", "Gandolh",
+              "https://wallpaperaccess.com/full/2565477.jpg"),
         ),
         MemberCard(
-          memberData: MemberData("Bran Alexandru", "Barnie", ""),
+          memberData: MemberData("Bran Alexandru", "Barnie",
+              "https://media.discordapp.net/attachments/820946780837380106/978019725701431296/269014675_3178122402459080_3212260788257963330_n.jpg"),
         ),
         MemberCard(
-          memberData: MemberData("Raduletu Horia", "XBisharp", ""),
+          memberData: MemberData("Raduletu Horia", "XBisharp",
+              "https://scontent-otp1-1.xx.fbcdn.net/v/t1.6435-9/80715051_652889255249705_4843661020310274048_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hfqDcpvT6nkAX81T02o&_nc_ht=scontent-otp1-1.xx&oh=00_AT9sgQRjO9LqV_Ay9OeUklAzwuhuKOKmbNgXJaUZZnXVzw&oe=62AE5EEB"),
         )
       ],
     );
@@ -40,17 +43,25 @@ class MemberCard extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              child: Column(children: [
-                Text(
-                  memberData.nume,
-                  style: defaultTextStyle,
-                ),
-                Text(
-                  "<< " + memberData.alias + " >>",
-                  style: defaultTextStyle,
-                ),
-                Image.network('https://wallpaperaccess.com/full/2565477.jpg')
-              ]),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      memberData.nume,
+                      style: defaultTextStyle,
+                    ),
+                    Text(
+                      "<< " + memberData.alias + " >>",
+                      style: defaultTextStyle,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      child: CircleAvatar(
+                        radius: 60, // Image radius
+                        backgroundImage: NetworkImage(memberData.imageLink),
+                      ),
+                    )
+                  ]),
               padding: const EdgeInsets.all(10),
               margin: const EdgeInsets.all(50),
               height: 350,
@@ -77,6 +88,6 @@ class MemberCard extends StatelessWidget {
 class MemberData {
   String nume;
   String alias;
-  String imageLik;
-  MemberData(this.nume, this.alias, this.imageLik);
+  String imageLink;
+  MemberData(this.nume, this.alias, this.imageLink);
 }
