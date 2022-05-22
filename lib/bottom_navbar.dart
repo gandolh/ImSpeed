@@ -16,8 +16,8 @@ class _BottomNavbarState extends State<BottomNavbar> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    OurTeam(),
     Races(),
+    OurTeam(),
     Help()
   ];
 
@@ -41,7 +41,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
             backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.car_rental),
             label: 'Curse',
             backgroundColor: Colors.green,
           ),
@@ -51,7 +51,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
             backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.help),
             label: 'Ajutor',
             backgroundColor: Colors.black,
           ),
