@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// l-as intreba pe barnie ce a facut pe pagina de our_team
+// dar probabil isi dadu shutdown pana acum...
 
 class Help extends StatefulWidget {
   const Help({Key? key}) : super(key: key);
