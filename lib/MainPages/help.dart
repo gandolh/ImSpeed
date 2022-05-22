@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 // l-as intreba pe barnie ce a facut pe pagina de our_team
 // dar probabil isi dadu shutdown pana acum...
