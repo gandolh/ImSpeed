@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class Races extends StatefulWidget {
   const Races({Key? key}) : super(key: key);
@@ -8,8 +8,32 @@ class Races extends StatefulWidget {
 }
 
 class RacesState extends State<Races> {
+  final defaultTextStyle = TextStyle(
+      color: Colors.blue[50], fontWeight: FontWeight.bold, fontSize: 20);
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("Not Implemented yet"));
+    return Container(
+        color: Colors.blue[300],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Neumorphic(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 50),
+                margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 0),
+                style: NeumorphicStyle(
+                    shape: NeumorphicShape.flat,
+                    boxShape:
+                        NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
+                    depth: 8,
+                    lightSource: LightSource.topLeft,
+                    color: Colors.blue[300]),
+                child: Center(
+                    child: Text(
+                  "Not Implemented yet",
+                  style: defaultTextStyle,
+                ))),
+          ],
+        ));
   }
 }
