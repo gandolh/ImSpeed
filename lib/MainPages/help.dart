@@ -15,16 +15,24 @@ class _HelpState extends State<Help> {
       addAutomaticKeepAlives: false,
       children: [
         MemberCard(
-          memberData: MemberData("Gusatu Cristian", "Gandolh",
-              "https://wallpaperaccess.com/full/2565477.jpg"),
+          memberData: MemberData("Accesarea paginii acasa",
+              "Se apasa pe iconita cu o casa din bara de navigatie de jos", ""),
         ),
         MemberCard(
-          memberData: MemberData("Bran Alexandru", "Barnie",
-              "https://media.discordapp.net/attachments/820946780837380106/978019725701431296/269014675_3178122402459080_3212260788257963330_n.jpg"),
+          memberData: MemberData(
+              "Folosirea paginii Curse",
+              "Se apasa pe iconita cu o masina din bara de navigatie de jos",
+              ""),
         ),
         MemberCard(
-          memberData: MemberData("Raduletu Horia", "XBisharp",
-              "https://scontent-otp1-1.xx.fbcdn.net/v/t1.6435-9/80715051_652889255249705_4843661020310274048_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hfqDcpvT6nkAX81T02o&_nc_ht=scontent-otp1-1.xx&oh=00_AT9sgQRjO9LqV_Ay9OeUklAzwuhuKOKmbNgXJaUZZnXVzw&oe=62AE5EEB"),
+          memberData: MemberData(
+              "Accesarea paginii Echipa noastra",
+              "Se apasa pe iconita cu o palarie de absolvent, pentru ca speram sa ajungem si noi in anul 2",
+              ""),
+        ),
+        MemberCard(
+          memberData: MemberData(
+              "Accesarea paginii Ajutor", "Deja esti pe ea ??????", ""),
         )
       ],
     );
@@ -41,35 +49,32 @@ class MemberCard extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          Center(
-            child: Container(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      memberData.nume,
-                      style: defaultTextStyle,
-                    ),
-                    Text(
-                      "<< " + memberData.alias + " >>",
-                      style: defaultTextStyle,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      child: CircleAvatar(
-                        radius: 60, // Image radius
-                        backgroundImage: NetworkImage(memberData.imageLink),
-                      ),
-                    )
-                  ]),
-              padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.all(50),
-              height: 350,
-              width: 350,
-              decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-            ),
-          )
+          Container(
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text(
+                memberData.title,
+                style: defaultTextStyle,
+              ),
+              Text(
+                "<< " + memberData.description + " >>",
+                style: defaultTextStyle,
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                child: CircleAvatar(
+                  radius: 60, // Image radius
+                  backgroundImage: NetworkImage(memberData.imageLink),
+                ),
+              )
+            ]),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(50),
+            height: 350,
+            width: 350,
+            decoration: BoxDecoration(
+                color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+          ),
         ],
         mainAxisAlignment: MainAxisAlignment.center,
       ),
@@ -86,8 +91,8 @@ class MemberCard extends StatelessWidget {
 }
 
 class MemberData {
-  String nume;
-  String alias;
+  String title;
+  String description;
   String imageLink;
-  MemberData(this.nume, this.alias, this.imageLink);
+  MemberData(this.title, this.description, this.imageLink);
 }
