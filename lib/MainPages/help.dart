@@ -17,24 +17,28 @@ class _HelpState extends State<Help> {
       addAutomaticKeepAlives: false,
       children: [
         MemberCard(
-          memberData: MemberData("Accesarea paginii acasa",
-              "Se apasa pe iconita cu o casa din bara de navigatie de jos", ""),
+          memberData: MemberData(
+              "Accesarea paginii acasa",
+              "Se apasa pe iconita cu o casa din bara de navigatie de jos",
+              "https://www.clausweb.ro/intrebari-frecvente/wp-content/uploads/2015/06/notfound.png"),
         ),
         MemberCard(
           memberData: MemberData(
               "Folosirea paginii Curse",
               "Se apasa pe iconita cu o masina din bara de navigatie de jos",
-              ""),
+              "https://www.clausweb.ro/intrebari-frecvente/wp-content/uploads/2015/06/notfound.png"),
         ),
         MemberCard(
           memberData: MemberData(
               "Accesarea paginii Echipa noastra",
               "Se apasa pe iconita cu o palarie de absolvent, pentru ca speram sa ajungem si noi in anul 2",
-              ""),
+              "https://www.clausweb.ro/intrebari-frecvente/wp-content/uploads/2015/06/notfound.png"),
         ),
         MemberCard(
           memberData: MemberData(
-              "Accesarea paginii Ajutor", "Deja esti pe ea ??????", ""),
+              "Accesarea paginii Ajutor",
+              "Deja esti pe ea ??????",
+              "https://www.clausweb.ro/intrebari-frecvente/wp-content/uploads/2015/06/notfound.png"),
         )
       ],
     );
@@ -43,31 +47,33 @@ class _HelpState extends State<Help> {
 
 class MemberCard extends StatelessWidget {
   final MemberData memberData;
-  const MemberCard({Key? key, required this.memberData}) : super(key: key);
-  final defaultTextStyle = const TextStyle(
-      color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15);
+  MemberCard({Key? key, required this.memberData}) : super(key: key);
+  final titleTextStyle = TextStyle(
+      color: Colors.blue[50], fontWeight: FontWeight.bold, fontSize: 20);
+  final descriptionTextStyle = TextStyle(
+      color: Colors.blue[100], fontWeight: FontWeight.bold, fontSize: 15);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
                 memberData.title,
-                style: defaultTextStyle,
+                style: titleTextStyle,
+                textAlign: TextAlign.start,
               ),
               Text(
-                "<< " + memberData.description + " >>",
-                style: defaultTextStyle,
+                memberData.description,
+                style: descriptionTextStyle,
               ),
               Container(
                 margin: const EdgeInsets.only(top: 10),
-                child: CircleAvatar(
-                  radius: 60, // Image radius
-                  backgroundImage: NetworkImage(memberData.imageLink),
-                ),
+                child: Image.network(memberData.imageLink),
               )
             ]),
             padding: const EdgeInsets.all(10),
@@ -78,7 +84,6 @@ class MemberCard extends StatelessWidget {
                 color: Colors.blue, borderRadius: BorderRadius.circular(20)),
           ),
         ],
-        mainAxisAlignment: MainAxisAlignment.center,
       ),
       height: 500,
       width: 500,
