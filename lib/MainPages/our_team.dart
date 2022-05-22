@@ -43,7 +43,7 @@ class MemberCard extends StatelessWidget {
       width: 500,
       decoration: BoxDecoration(
         color: Colors.blue[300],
-        border: Border(
+        border: const Border(
           bottom: BorderSide(width: 2, color: Colors.blue),
         ),
       ),
